@@ -30,17 +30,17 @@ export const getAllUsers = async (req, res) => {
 
 
 export const creatUser = async (req, res) => {
-    const { name, email } = req.body
+    const { name, email, password } = req.body
     try {
         // tento fazer algo aqui
 
         const newUser = await prisma.user.create({
-            data: { name, email }
+            data: { name, email, password}
         })
-        res.status(500).json(newUser)
+        res.status(201).json(newUser)
     } catch (error) {
 
-        res.status(500).json({
+        res.status(201).json({
             menssage: "Error ao criar o novo usuário",
             erro: error.message
         })
