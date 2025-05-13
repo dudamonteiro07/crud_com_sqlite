@@ -15,3 +15,8 @@ export const updatedUserSchema = z.object({
         .min(6, "A senha deve ter pelo menos uma letra maiscula")
         .regex(/[A-Z]/).optional()
 })
+
+export const loginSchema = z.object({
+    email: z.string().email('Email inválido!'),
+    password:  z.string().min("1 esse campo não pode estar vazio. ")
+})

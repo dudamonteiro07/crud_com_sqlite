@@ -17,7 +17,7 @@
 
 
 
-export function validate(schema){
+export function validate(schema) {
 
     return (req, res, next) => {
         try {
@@ -36,7 +36,7 @@ export function validate(schema){
                 menssage: "Errro de validação",
                 erros: error.errors.map(e => ({
                     path: e.path,
-                    menssage: e.menssage
+                    menssage: e.message
 
                 }))
             })

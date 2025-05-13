@@ -1,5 +1,6 @@
 import express from "express"
 import userRoutes from "./routes/userRoute.js"
+import productRoutes from "./routes/productRoutes.js"
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.use(express.json())
  * rotas de usuário
  */
 app.use("/users",userRoutes)
+app.use("/product",productRoutes)
 
 
 export default app;
